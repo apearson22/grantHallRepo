@@ -11,7 +11,8 @@ class Client(models.Model):
         return "%s %s" % (self.firstName, self.lastName)
 
 class Order(models.Model):
-    receiveDate = models.DateField()
+    orderDate = models.DateField()
+    orderTime = models.TimeField()
     paid = models.BooleanField(default=False)
     orderType = models.CharField(max_length=30)
     quantity = models.IntegerField()
