@@ -16,7 +16,7 @@ def additem(request):
     if request.method == 'POST':
         form = ItemForm(request.POST)
         if form.is_valid():
-            #Add the cadet to the database
+            #Add the item to the database
             newitem = form.save()
             return HttpResponseRedirect('/granthall')
     else:
