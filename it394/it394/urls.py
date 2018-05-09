@@ -19,6 +19,7 @@ from granthall import views
 
 
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
-    path('granthall/', include ('granthall.urls')),
+    path('granthall/', include('granthall.urls')),
 ]

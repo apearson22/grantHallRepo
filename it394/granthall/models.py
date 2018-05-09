@@ -5,7 +5,6 @@ class Client(models.Model):
     lastName = models.CharField(max_length=30)
     cadet = models.BooleanField(default=False)
     faculty = models.BooleanField(default=False)
-    stockPerson = models.BooleanField(default=False)
 
     def __str__(self):
         return "%s %s" % (self.firstName, self.lastName)
@@ -18,19 +17,19 @@ class Order(models.Model):
     quantity = models.IntegerField()
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     def __str__(self):
-        return self.orderID
+        return self.client
 
 class Item(models.Model):
     stockQuantity = models.IntegerField()
     foodName = models.CharField(max_length=30)
     price = models.IntegerField()
-    espirationDate = models.DateField()
+    expirationDate = models.DateField()
     calories = models.IntegerField()
     sodium = models.IntegerField()
     sugar = models.IntegerField()
     fat = models.IntegerField()
     def __str__(self):
-        return "%s %s" % ( self.quantity, self.price)
+        return "%s %s" % ( self.stockQuantity, self.price)
         
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
