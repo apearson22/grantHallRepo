@@ -1,0 +1,2 @@
+gunicorn==19.8.1
+whitenoise==3.3.1
