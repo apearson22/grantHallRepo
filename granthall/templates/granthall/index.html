@@ -3,9 +3,9 @@
 {% block content %}
 {% if user.is_authenticated %}
 <p>Welcome to the Grant Hall Mangement Page!</p>
-<a href="{% url 'logout' %}">Log Out</a>
+<a href="logout">Log Out</a>
 <p>Please use the tabs above to navigate to the desired page.</p>
 {% else %}
-<a href="{% url 'login' %}">Log In</a>
+<a href="login">Log In</a>
 {% endif %}
 {% endblock %}
