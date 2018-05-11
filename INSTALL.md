@@ -7,20 +7,20 @@ linux OS.
 
 2) To get the application from github you must clone the git repo
 > git clone https://<username>@github.com/apearson22/grantHallRepo
-or if you have already cloned the repo
+2a)or if you have already cloned the repo
 > git pull origin master
 
 3) Next,ensure that everything is updated for the files we need
-> pip install django
-> pip install heroku
-> pip install --upgrade pip
-> pip install gunicorn
-> pip install whitenoise
-> pip freeze >requirements.txt
+ pip install django
+ pip install heroku
+ pip install --upgrade pip
+ pip install gunicorn
+ pip install whitenoise
+ pip freeze >requirements.txt
 
 4) Once those are up to date, login to heroku
-> heroku login
-<enter username and password>
+ heroku login
+## enter username and password
 
 5) ensure settings.py has the following lines at the end
 STATIC_URL = '/static/'
@@ -31,26 +31,26 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 'whitenoise.middleware.WhiteNoiseMiddleware',
 
 7) Create Procfile
-> vim Procfile
+ vim Procfile
 
 8) add in Procfile
 web: gunicorn it394.wsgi --log-file -
 
 8)Establish the connection to Heroku
-> heroku git: remote -a rocky-everglades-63868
+ heroku git: remote -a rocky-everglades-63868
 
 9) commit files from the local repo
-> git add .
-> git commit -a -m "<purpose of commit>"
+ git add .
+ git commit -a -m "purpose of commit"
 
 10) Push local repository to Herkou
-> git push heroku master
+ git push heroku master
 
 
 This should allow you to have your application deployed
 to heroku. You can visit the site to see view logs of
 successful and unsuccessful builds or you can use:
->heroku logs
+> heroku logs
 
 The site to upload the git repository to establish the 
 heroku connection is https://git.heroku.com/rocky-everglades-63868.git
